@@ -1,0 +1,97 @@
+﻿@page "/events/details"
+@using Microsoft.EntityFrameworkCore
+@using EventManagement.Models
+@inject IDbContextFactory<EventManagement.Data.MyAppDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+@* <PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h2>Events</h2>
+    <hr />
+    @if (events is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">Title</dt>
+            <dd class="col-sm-10">@events.Title</dd>
+            <dt class="col-sm-2">Description</dt>
+            <dd class="col-sm-10">@events.Description</dd>
+            <dt class="col-sm-2">StartTime</dt>
+            <dd class="col-sm-10">@events.StartTime</dd>
+            <dt class="col-sm-2">EndTime</dt>
+            <dd class="col-sm-10">@events.EndTime</dd>
+            <dt class="col-sm-2">Location</dt>
+            <dd class="col-sm-10">@events.Location</dd>
+        </dl>
+        <div>
+            <a href="@($"/events/edit?id={events.Id}")">Edit</a> |
+            <a href="@($"/events")">Back to List</a>
+        </div>
+    }
+</div> *@
+
+<PageTitle>Details</PageTitle>
+
+<h1 class="text-center text-primary mb-4">Event Details</h1>
+
+<div class="container">
+    <h2 class="text-secondary">Event</h2>
+    <hr />
+
+    @if (events is null)
+    {
+        <p class="text-center"><em>Loading...</em></p>
+    }
+    else
+    {
+        <dl class="row bg-light p-4 rounded shadow-sm">
+            <dt class="col-sm-3 fw-bold">Title</dt>
+            <dd class="col-sm-9">@events.Title</dd>
+
+            <dt class="col-sm-3 fw-bold">Description</dt>
+            <dd class="col-sm-9">@events.Description</dd>
+
+            <dt class="col-sm-3 fw-bold">Start Time</dt>
+            <dd class="col-sm-9">@events.StartTime.ToString("f")</dd>
+
+            <dt class="col-sm-3 fw-bold">End Time</dt>
+            <dd class="col-sm-9">@events.EndTime.ToString("f")</dd>
+
+            <dt class="col-sm-3 fw-bold">Location</dt>
+            <dd class="col-sm-9">@events.Location</dd>
+        </dl>
+
+        <div class="mt-4 text-center">
+            <a class="btn btn-outline-success me-2" href="@($"/events/edit?id={events.Id}")">
+                <i class="bi bi-pencil-square"></i> Edit
+            </a>
+            <a class="btn btn-outline-secondary" href="/events">
+                <i class="bi bi-arrow-left-circle"></i> Back to List
+            </a>
+        </div>
+    }
+</div>
+
+
+@code {
+    private Events? events;
+
+    [SupplyParameterFromQuery]
+    private int Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        events = await context.Events.FirstOrDefaultAsync(m => m.Id == Id);
+
+        if (events is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}

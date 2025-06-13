@@ -1,0 +1,32 @@
+﻿@page "/cancel-booking"
+@using EventManagement.Models
+@using EventManagement.Data
+@inject IDbContextFactory<MyAppDbContext> DbFactory
+@using Microsoft.EntityFrameworkCore
+@inject NavigationManager NavigationManager
+@inject IHttpContextAccessor HttpContextAccessor
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public int BookingId { get; set; }
+
+    private MyAppDbContext context = default!;
+    private string userId = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        context = DbFactory.CreateDbContext();
+        userId = HttpContextAccessor.HttpContext?.User?.Identity?.Name ?? "Anonymous";
+
+        var booking = await context.Bookings.FindAsync(BookingId);
+
+        if (booking != null && booking.UserId == userId)
+        {
+            context.Bookings.Remove(booking);
+            await context.SaveChangesAsync();
+        }
+
+        NavigationManager.NavigateTo("/my-bookings");
+    }
+}

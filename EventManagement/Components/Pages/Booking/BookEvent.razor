@@ -1,0 +1,127 @@
+﻿@page "/book-event/{Id:int}"
+@using EventManagement.Models
+@using EventManagement.Data
+@using Microsoft.EntityFrameworkCore
+@inject IHttpContextAccessor HttpContextAccessor
+@inject IDbContextFactory<MyAppDbContext> DbFactory
+@inject NavigationManager NavigationManager
+@inject ILogger<BookEvent> Logger
+
+<PageTitle>Book Event</PageTitle>
+
+<h3>Booking Event</h3>
+
+@if (!string.IsNullOrEmpty(Message))
+{
+    <div class="alert alert-info">@Message</div>
+}
+
+<a class="btn btn-outline-secondary" href="/book-now">
+    <i class="bi bi-arrow-left-circle"></i> Back to Home
+</a>
+
+@* @code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private string Message = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id <= 0)
+        {
+            Message = "Invalid event ID.";
+            return;
+        }
+
+        using var context = DbFactory.CreateDbContext();
+
+        var userId = HttpContextAccessor.HttpContext?.User?.Identity?.Name ?? string.Empty;
+
+        if (string.IsNullOrWhiteSpace(userId) || userId == "Anonymous")
+        {
+            NavigationManager.NavigateTo("/login", true);
+            return;
+        }
+
+        // Check if the booking already exists
+        var alreadyBooked = await context.Bookings
+            .AnyAsync(b => b.EventId == Id && b.UserId == userId);
+
+        if (alreadyBooked)
+        {
+            Message = "You have already booked this event.";
+            return;
+        }
+
+        var booking = new Booking
+        {
+            EventId = Id,
+            UserId = userId,
+            BookingTime = DateTime.UtcNow
+        };
+
+        context.Bookings.Add(booking);
+        await context.SaveChangesAsync();
+
+        Message = "Booking successful!";
+    }
+} *@
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private string Message = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id <= 0)
+        {
+            Message = "Invalid event ID.";
+            return;
+        }
+
+        using var context = DbFactory.CreateDbContext();
+
+        var userId = HttpContextAccessor.HttpContext?.User?.Identity?.Name ?? string.Empty;
+
+        if (string.IsNullOrWhiteSpace(userId) || userId == "Anonymous")
+        {
+            NavigationManager.NavigateTo("/login", true);
+            return;
+        }
+
+        // Check if the booking already exists
+        var alreadyBooked = await context.Bookings
+            .AnyAsync(b => b.EventId == Id && b.UserId == userId);
+
+        if (alreadyBooked)
+        {
+            Message = "You have already booked this event.";
+            return;
+        }
+
+        // Get event details to capture current start time
+        var eventDetails = await context.Events.FirstOrDefaultAsync(e => e.Id == Id);
+        if (eventDetails == null)
+        {
+            Message = "Event not found.";
+            return;
+        }
+
+        var booking = new Booking
+        {
+            EventId = Id,
+            UserId = userId,
+            BookingTime = DateTime.UtcNow,
+            OriginalEventStartTime = eventDetails.StartTime
+        };
+
+        context.Bookings.Add(booking);
+        await context.SaveChangesAsync();
+
+        Message = "Booking successful!";
+    }
+}
+

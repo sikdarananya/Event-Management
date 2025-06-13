@@ -1,0 +1,93 @@
+﻿@page "/register"
+
+@using EventManagement.Models
+@using EventManagement.Data
+@using System.ComponentModel.DataAnnotations
+@inject MyAppDbContext myappDbContext
+@inject NavigationManager navigationManager
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4 p-4 border rounded shadow-sm bg-light">
+        <EditForm Model="@Model" OnValidSubmit="RegisterUser" FormName="RegisterForm">
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" />
+
+            <div class="mb-4 text-center">
+                <h3 class="fw-bold">Register</h3>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">User Name</label>
+                <InputText @bind-Value="Model.UserName" class="form-control" placeholder="Username" />
+                <ValidationMessage For="@(() => Model.UserName)" class="text-danger" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Password</label>
+                <InputText @bind-Value="Model.Password" type="password" class="form-control" placeholder="Password" />
+                <ValidationMessage For="@(() => Model.Password)" class="text-danger" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Role</label>
+                <InputText @bind-Value="Model.Role" class="form-control" placeholder="Role (e.g. Admin/User)" />
+                <ValidationMessage For="@(() => Model.Role)" class="text-danger" />
+            </div>
+
+            <div class="mb-3 text-center">
+                @if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    <span class="text-danger fw-semibold">@errorMessage</span>
+                }
+            </div>
+
+            <div class="mb-3 d-grid">
+                <button type="submit" class="btn btn-primary btn-lg fw-semibold">Register</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+
+@code {
+    [SupplyParameterFromForm]
+    private RegisterViewModel Model { get; set; } = new();
+
+    private string? errorMessage;
+
+    private async Task RegisterUser()
+    {
+        var existingUser = myappDbContext.UserAccounts.FirstOrDefault(x => x.UserName == Model.UserName);
+        if (existingUser != null)
+        {
+            errorMessage = "Username already exists.";
+            return;
+        }
+
+        var newUser = new UserAccounts
+        {
+            UserName = Model.UserName,
+            Password = Model.Password,
+            Role = Model.Role
+        };
+
+        myappDbContext.UserAccounts.Add(newUser);
+        await myappDbContext.SaveChangesAsync();
+
+        navigationManager.NavigateTo("/login");
+    }
+
+    public class RegisterViewModel
+    {
+        [Required(ErrorMessage = "Username is required")]
+        public string UserName { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Role is required")]
+        public string Role { get; set; } = "user";
+    }
+}
+
+

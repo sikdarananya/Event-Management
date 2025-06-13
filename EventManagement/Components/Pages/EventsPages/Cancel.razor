@@ -1,0 +1,24 @@
+﻿@page "/events/cancel"
+@inject NavigationManager NavigationManager
+@inject IDbContextFactory<MyAppDbContext> DbFactory
+@using EventManagement.Models
+@using EventManagement.Data
+@using Microsoft.EntityFrameworkCore
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        var ev = await context.Events.FindAsync(Id);
+        if (ev != null)
+        {
+            ev.IsCancelled = true;
+            await context.SaveChangesAsync();
+        }
+
+        NavigationManager.NavigateTo("/events");
+    }
+}
+

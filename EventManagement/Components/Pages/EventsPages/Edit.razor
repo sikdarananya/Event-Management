@@ -1,0 +1,149 @@
+﻿@page "/events/edit"
+@using Microsoft.EntityFrameworkCore
+@using EventManagement.Models
+@inject IDbContextFactory<EventManagement.Data.MyAppDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+
+<PageTitle>Edit</PageTitle>
+
+<h1 class="text-center text-primary mb-3">Edit</h1>
+<h2 class="text-center text-secondary mb-4">Events</h2>
+<hr />
+
+@if (Events is null)
+{
+    <p class="text-center"><em>Loading...</em></p>
+}
+else if (isCancelled)
+{
+    <div class="alert alert-danger text-center">
+        This event has been cancelled. Editing is not allowed.
+    </div>
+}
+else if (isPastEvent)
+{
+    <div class="alert alert-warning text-center">
+        This event has already ended. Editing is not allowed.
+    </div>
+}
+
+
+else
+{
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-4 rounded bg-light">
+            <EditForm method="post" Model="Events" OnValidSubmit="UpdateEvents" FormName="edit" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary class="text-danger mb-3" role="alert" />
+
+                <input type="hidden" name="Events.Id" value="@Events.Id" />
+
+                <div class="mb-3">
+                    <label for="title" class="form-label fw-semibold">Title:</label>
+                    <InputText id="title" @bind-Value="Events.Title" class="form-control" />
+                    <ValidationMessage For="() => Events.Title" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label fw-semibold">Description:</label>
+                    <InputText id="description" @bind-Value="Events.Description" class="form-control" />
+                    <ValidationMessage For="() => Events.Description" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="starttime" class="form-label fw-semibold">Start Time:</label>
+                    <InputDate id="starttime" @bind-Value="Events.StartTime" class="form-control" />
+                    <ValidationMessage For="() => Events.StartTime" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="endtime" class="form-label fw-semibold">End Time:</label>
+                    <InputDate id="endtime" @bind-Value="Events.EndTime" class="form-control" />
+                    <ValidationMessage For="() => Events.EndTime" />
+                </div>
+
+                <div class="mb-4">
+                    <label for="location" class="form-label fw-semibold">Location:</label>
+                    <InputText id="location" @bind-Value="Events.Location" class="form-control" readonly />
+                    <ValidationMessage For="() => Events.Location" />
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">
+                    <i class="bi bi-save2"></i> Save
+                </button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+<div class="mt-4 text-center">
+    <a href="/events" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left-circle"></i> Back to List
+    </a>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    private int Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private Events? Events { get; set; }
+
+    private bool isPastEvent = false;
+    private bool isCancelled = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        Events ??= await context.Events.FirstOrDefaultAsync(m => m.Id == Id);
+
+        if (Events is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+            return;
+        }
+
+       
+
+
+        isPastEvent = Events.EndTime < DateTime.UtcNow;
+        isCancelled = Events.IsCancelled;
+
+    }
+
+    private async Task UpdateEvents()
+    {
+        if (isPastEvent || isCancelled) return;
+   
+
+        using var context = DbFactory.CreateDbContext();
+        context.Attach(Events!).State = EntityState.Modified;
+
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!EventsExists(Events!.Id))
+            {
+                NavigationManager.NavigateTo("notfound");
+            }
+            else
+            {
+                throw;
+            }
+        }
+
+        NavigationManager.NavigateTo("/events");
+    }
+
+    private bool EventsExists(int id)
+    {
+        using var context = DbFactory.CreateDbContext();
+        return context.Events.Any(e => e.Id == id);
+    }
+
+    public async ValueTask DisposeAsync() => await Task.CompletedTask;
+}

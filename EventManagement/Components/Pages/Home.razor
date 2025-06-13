@@ -1,0 +1,55 @@
+﻿@page "/"
+
+@* <PageTitle>Home</PageTitle>
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="fw-bolder">Welcome to <span class="text-danger">Event Manager</span></h2>
+    </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <AuthorizeView>
+                    <NotAuthorized>
+                        <span>You are not logged in. Please <a class="fw-bolder" href="/login">click here</a>to Login</span>
+                    </NotAuthorized>
+                    <NotAuthorized>
+                        <span>If you are a new user, Please <a class="fw-bolder" href="/register">register here</a>to to create an account</span>
+                    </NotAuthorized>
+                    <Authorized>
+                        <span>Logged in as <b>@context.User.Identity.Name</b>, <a class="fw-bolder" href="/logout">Click here</a> to logout.</span>
+                    </Authorized>
+                </AuthorizeView>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+<PageTitle>Home</PageTitle>
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">Welcome to <span class="text-danger">Event Manager</span></h2>
+        <p class="lead text-muted">Manage, explore and book amazing events!</p>
+    </div>
+
+    <div class="card shadow-lg border-0 mx-auto" style="max-width: 600px;">
+        <div class="card-body text-center">
+            <AuthorizeView>
+                <NotAuthorized>
+                    <p class="mb-3">
+                        <span class="text-secondary">You are not logged in.</span><br />
+                        <a class="btn btn-primary btn-sm fw-bold me-2 mt-2" href="/login">Login</a>
+                        <a class="btn btn-outline-primary btn-sm fw-bold mt-2" href="/register">Register</a>
+                    </p>
+                </NotAuthorized>
+                <Authorized>
+                    <p class="mb-0 fs-5">
+                        Logged in as <span class="fw-semibold text-primary">@context.User.Identity?.Name</span>
+                    </p>
+                    <a class="btn btn-danger mt-3" href="/logout">Logout</a>
+                </Authorized>
+            </AuthorizeView>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,309 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sikda\\Documents\\EventManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\booking\\contactus.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\booking\\contactus.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\booking\\book.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\booking\\book.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\booking\\bookevent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\booking\\bookevent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\models\\viewmodels\\contactviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\models\\viewmodels\\contactviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\eventspages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\eventspages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\account\\registration.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\account\\registration.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\booking\\cancelbooking.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\booking\\cancelbooking.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\eventspages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\eventspages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\booking\\mybookings.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\booking\\mybookings.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\eventspages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\eventspages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\eventspages\\cancel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\eventspages\\cancel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\account\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\account\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\models\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\models\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\account\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\account\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|c:\\users\\sikda\\documents\\eventmanagement\\eventmanagement\\components\\pages\\eventspages\\details.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C1F1DCA8-3C7F-4365-B3A7-FEAC7F6DDC1A}|EventManagement\\EventManagement.csproj|solutionrelative:eventmanagement\\components\\pages\\eventspages\\details.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ContactUs.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\ContactUs.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Booking\\ContactUs.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\ContactUs.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Booking\\ContactUs.razor",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAiwH8AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T04:13:06.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ContactViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Models\\ViewModels\\ContactViewModel.cs",
+              "RelativeDocumentMoniker": "EventManagement\\Models\\ViewModels\\ContactViewModel.cs",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Models\\ViewModels\\ContactViewModel.cs",
+              "RelativeToolTip": "EventManagement\\Models\\ViewModels\\ContactViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T04:43:01.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MyBookings.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\MyBookings.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Booking\\MyBookings.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\MyBookings.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Booking\\MyBookings.razor",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAiwL0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T14:17:57.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Index.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\EventsPages\\Index.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Index.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\EventsPages\\Index.razor",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAiwHwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T15:11:19.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Registration.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Account\\Registration.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Account\\Registration.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Account\\Registration.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Account\\Registration.razor",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T15:06:01.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookEvent.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\BookEvent.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Booking\\BookEvent.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\BookEvent.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Booking\\BookEvent.razor",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T14:51:31.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Book.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\Book.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Booking\\Book.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\Book.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Booking\\Book.razor",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T06:35:58.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CancelBooking.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\CancelBooking.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Booking\\CancelBooking.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Booking\\CancelBooking.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Booking\\CancelBooking.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T14:36:58.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Create.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\EventsPages\\Create.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Create.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\EventsPages\\Create.razor",
+              "ViewState": "AgIAACcAAAAAAAAAAAAiwDYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T04:26:55.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAD4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T06:36:19.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Account\\Login.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Account\\Login.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Account\\Login.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Account\\Login.razor",
+              "ViewState": "AgIAADkAAAAAAAAAAAAiwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T14:58:21.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Edit.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\EventsPages\\Edit.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Edit.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\EventsPages\\Edit.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACMAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T06:20:43.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cancel.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Cancel.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\EventsPages\\Cancel.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Cancel.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\EventsPages\\Cancel.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-06T06:22:39.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Events.cs",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Models\\Events.cs",
+              "RelativeDocumentMoniker": "EventManagement\\Models\\Events.cs",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Models\\Events.cs",
+              "RelativeToolTip": "EventManagement\\Models\\Events.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wB4AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T05:32:41.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Logout.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Account\\Logout.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Account\\Logout.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Account\\Logout.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Account\\Logout.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T15:02:39.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAADEAAAAAAAAAAAAiwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T14:53:27.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAiwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T14:50:36.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Details.razor",
+              "DocumentMoniker": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Details.razor",
+              "RelativeDocumentMoniker": "EventManagement\\Components\\Pages\\EventsPages\\Details.razor",
+              "ToolTip": "C:\\Users\\sikda\\Documents\\EventManagement\\EventManagement\\Components\\Pages\\EventsPages\\Details.razor",
+              "RelativeToolTip": "EventManagement\\Components\\Pages\\EventsPages\\Details.razor",
+              "ViewState": "AgIAADYAAAAAAAAAAIBJwEoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T06:23:37.886Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

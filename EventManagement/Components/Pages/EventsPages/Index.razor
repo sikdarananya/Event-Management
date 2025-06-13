@@ -1,0 +1,158 @@
+﻿@* @page "/events"
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using EventManagement.Models
+@using EventManagement.Data
+@implements IAsyncDisposable
+@inject IDbContextFactory<EventManagement.Data.MyAppDbContext> DbFactory
+
+<PageTitle>Events</PageTitle>
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center text-primary">Upcoming Events</h1>
+
+    <QuickGrid Class="table table-striped table-hover" Items="context.Events">
+        <PropertyColumn Property="events => events.Title" Title="Title" />
+        <PropertyColumn Property="events => events.Description" Title="Description" />
+        <PropertyColumn Property="events => events.StartTime" Title="Start Time" />
+        <PropertyColumn Property="events => events.EndTime" Title="End Time" />
+        <PropertyColumn Property="events => events.Location" Title="Location" />
+
+        <TemplateColumn Context="events" Title="Actions">
+            <div class="btn-group" role="group">
+                <a class="btn btn-sm btn-outline-primary" href="@($"/events/details?id={events.Id}")">
+                    <i class="bi bi-eye"></i> View
+                </a>
+
+                @if (events.EndTime > DateTime.UtcNow)
+                {
+                    <a class="btn btn-sm btn-outline-success" href="@($"/events/edit?id={events.Id}")">
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </a>
+                    <a class="btn btn-sm btn-outline-danger" href="@($"/events/delete?id={events.Id}")">
+                        <i class="bi bi-trash"></i> Delete
+                    </a>
+                }
+                else
+                {
+                    <button class="btn btn-sm btn-outline-secondary" disabled>
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary" disabled>
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                }
+            </div>
+        </TemplateColumn>
+    </QuickGrid>
+
+    <div class="d-flex justify-content-end mt-4">
+        <a class="btn btn-primary" href="/events/create">
+            <i class="bi bi-plus-circle"></i> Add New Event
+        </a>
+    </div>
+</div>
+
+@code {
+    private MyAppDbContext context = default!;
+
+    protected override void OnInitialized()
+    {
+        context = DbFactory.CreateDbContext();
+    }
+
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+}
+
+
+
+
+ *@
+
+@page "/events"
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using EventManagement.Models
+@using EventManagement.Data
+@implements IAsyncDisposable
+@inject IDbContextFactory<EventManagement.Data.MyAppDbContext> DbFactory
+
+<PageTitle>Events</PageTitle>
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center text-primary">Upcoming Events</h1>
+
+    <QuickGrid Class="table table-striped table-hover" Items="context.Events">
+        <PropertyColumn Property="events => events.Title" Title="Title" />
+        <PropertyColumn Property="events => events.Description" Title="Description" />
+        <PropertyColumn Property="events => events.StartTime" Title="Start Time" />
+        <PropertyColumn Property="events => events.EndTime" Title="End Time" />
+        <PropertyColumn Property="events => events.Location" Title="Location" />
+
+        <TemplateColumn Context="events" Title="Status">
+            @if (events.IsCancelled)
+            {
+                <span class="badge bg-danger">Cancelled</span>
+            }
+            else if (events.StartTime > DateTime.UtcNow)
+            {
+                <span class="badge bg-success">Upcoming</span>
+            }
+            else if (events.EndTime > DateTime.UtcNow)
+            {
+                <span class="badge bg-primary">On Going</span>
+            }
+            else
+            {
+                <span class="badge bg-secondary">Past</span>
+            }
+        </TemplateColumn>
+
+        <TemplateColumn Context="events" Title="Actions">
+            <div class="btn-group" role="group">
+                <a class="btn btn-sm btn-outline-primary" href="@($"/events/details?id={events.Id}")">
+                    <i class="bi bi-eye"></i> View
+                </a>
+
+                @if (!events.IsCancelled && events.EndTime > DateTime.UtcNow)
+                {
+                    <a class="btn btn-sm btn-outline-success" href="@($"/events/edit?id={events.Id}")">
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </a>
+                    <a class="btn btn-sm btn-outline-danger" href="@($"/events/delete?id={events.Id}")">
+                        <i class="bi bi-trash"></i> Delete
+                    </a>
+                    
+                }
+                else
+                {
+                    <button class="btn btn-sm btn-outline-secondary" disabled>
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary" disabled>
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                   
+                }
+            </div>
+        </TemplateColumn>
+    </QuickGrid>
+
+    <div class="d-flex justify-content-end mt-4">
+        <a class="btn btn-primary" href="/events/create">
+            <i class="bi bi-plus-circle"></i> Add New Event
+        </a>
+    </div>
+</div>
+
+@code {
+    private MyAppDbContext context = default!;
+
+    protected override void OnInitialized()
+    {
+        context = DbFactory.CreateDbContext();
+    }
+
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+}
+

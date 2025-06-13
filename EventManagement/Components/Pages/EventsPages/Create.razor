@@ -1,0 +1,71 @@
+﻿@page "/events/create"
+@using Microsoft.EntityFrameworkCore
+@using EventManagement.Models
+@inject IDbContextFactory<EventManagement.Data.MyAppDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create</PageTitle>
+
+<h1 class="text-center text-primary mb-4">Create New Event</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <EditForm Model="Events" OnValidSubmit="AddEvents" FormName="create" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary class="text-danger" />
+
+                <div class="mb-3">
+                    <label for="title" class="form-label fw-semibold">Title</label>
+                    <InputText id="title" @bind-Value="Events.Title" class="form-control" />
+                    <ValidationMessage For="() => Events.Title" class="text-danger" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label fw-semibold">Description</label>
+                    <InputText id="description" @bind-Value="Events.Description" class="form-control" />
+                    <ValidationMessage For="() => Events.Description" class="text-danger" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="starttime" class="form-label fw-semibold">Start Time</label>
+                    <InputDate id="starttime" @bind-Value="Events.StartTime" class="form-control" />
+                    <ValidationMessage For="() => Events.StartTime" class="text-danger" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="endtime" class="form-label fw-semibold">End Time</label>
+                    <InputDate id="endtime" @bind-Value="Events.EndTime" class="form-control" />
+                    <ValidationMessage For="() => Events.EndTime" class="text-danger" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label fw-semibold">Location</label>
+                    <InputText id="location" @bind-Value="Events.Location" class="form-control" />
+                    <ValidationMessage For="() => Events.Location" class="text-danger" />
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-secondary" href="/events">Back to List</a>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i> Create
+                    </button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private Events Events { get; set; } = new();
+
+    // To protect from overposting attacks, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task AddEvents()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Events.Add(Events);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/events");
+    }
+}

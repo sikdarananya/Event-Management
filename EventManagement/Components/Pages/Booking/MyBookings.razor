@@ -1,0 +1,195 @@
+﻿@* @page "/my-bookings"
+@using EventManagement.Models
+@using EventManagement.Data
+@inject IHttpContextAccessor HttpContextAccessor
+@inject IDbContextFactory<MyAppDbContext> DbFactory
+@using Microsoft.EntityFrameworkCore
+@inject NavigationManager NavigationManager
+
+<PageTitle>My Bookings</PageTitle>
+
+<h3 class="text-center mt-4 text-primary">My Bookings</h3>
+
+@if (bookings == null || !bookings.Any())
+{
+    <p class="text-center">You have not booked any events yet.</p>
+}
+else
+{
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var booking in bookings)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-primary">@booking.Event?.Title</h5>
+                            <p class="card-text">@booking.Event?.Description</p>
+                            <p class="card-text mb-1">
+                                <strong>Start:</strong> @booking.Event?.StartTime.ToString("f")
+                            </p>
+                            <p class="card-text mb-3">
+                                <strong>End:</strong> @booking.Event?.EndTime.ToString("f")
+                            </p>
+                            <p class="card-text mb-3">
+                                <strong>Location:</strong> @booking.Event?.Location
+                            </p>
+                            <p class="card-text text-muted"><em>Booked On:</em> @booking.BookingTime.ToString("g")</p>
+
+                            @{
+                                var eventStart = booking.Event?.StartTime ?? DateTime.MinValue;
+                                var originalStart = booking.OriginalEventStartTime;
+                                var isPostponed = eventStart != originalStart;
+                                var canCancel = (eventStart - DateTime.UtcNow).TotalHours >= 24 || isPostponed;
+                            }
+
+                            @if (isPostponed)
+                            {
+                                <span class="badge bg-warning mb-2">Postponed</span>
+                            }
+
+                            @if (canCancel)
+                            {
+                                <a class="btn btn-danger mt-auto"
+                                   href="@($"/cancel-booking?BookingId={booking.Id}")"
+                                   onclick="return confirm('Are you sure you want to cancel this booking?');">
+                                    Cancel
+                                </a>
+                            }
+                            else
+                            {
+                                <button class="btn btn-secondary mt-auto" disabled>
+                                    Cannot cancel (less than 24 hrs)
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    private List<Booking> bookings = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var userId = HttpContextAccessor.HttpContext?.User?.Identity?.Name ?? "Anonymous";
+
+        if (userId == "Anonymous")
+        {
+            NavigationManager.NavigateTo("/login", true);
+            return;
+        }
+
+        using var context = DbFactory.CreateDbContext();
+        bookings = await context.Bookings
+            .Include(b => b.Event)
+            .Where(b => b.UserId == userId)
+            .ToListAsync();
+    }
+} *@
+
+@page "/my-bookings"
+@using EventManagement.Models
+@using EventManagement.Data
+@inject IHttpContextAccessor HttpContextAccessor
+@inject IDbContextFactory<MyAppDbContext> DbFactory
+@using Microsoft.EntityFrameworkCore
+@inject NavigationManager NavigationManager
+
+<PageTitle>My Bookings</PageTitle>
+
+<h3 class="text-center mt-4 text-primary">My Bookings</h3>
+
+@if (bookings == null || !bookings.Any())
+{
+    <p class="text-center">You have not booked any events yet.</p>
+}
+else
+{
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var booking in bookings)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-primary">@booking.Event?.Title</h5>
+                            <p class="card-text">@booking.Event?.Description</p>
+                            <p class="card-text mb-1">
+                                <strong>Start:</strong> @booking.Event?.StartTime.ToString("f")
+                            </p>
+                            <p class="card-text mb-3">
+                                <strong>End:</strong> @booking.Event?.EndTime.ToString("f")
+                            </p>
+                            <p class="card-text mb-3">
+                                <strong>Location:</strong> @booking.Event?.Location
+                            </p>
+                            <p class="card-text text-muted"><em>Booked On:</em> @booking.BookingTime.ToString("g")</p>
+
+                            @{
+                                var eventStart = booking.Event?.StartTime ?? DateTime.MinValue;
+                                var originalStart = booking.OriginalEventStartTime;
+                                var isPostponed = eventStart != originalStart;
+                                var isCancelled = booking.Event?.IsCancelled ?? false;
+                                var canCancel = (eventStart - DateTime.UtcNow).TotalHours >= 24 || isPostponed;
+                            }
+
+                            @if (isCancelled)
+                            {
+                                <span class="badge bg-danger mb-2">Cancelled</span>
+                                <button class="btn btn-secondary mt-auto" disabled>Cannot cancel (event cancelled)</button>
+                            }
+                            else
+                            {
+                                @if (isPostponed)
+                                {
+                                    <span class="badge bg-warning mb-2">Postponed</span>
+                                }
+
+                                @if (canCancel)
+                                {
+                                    <a class="btn btn-danger mt-auto"
+                                       href="@($"/cancel-booking?BookingId={booking.Id}")"
+                                       onclick="return confirm('Are you sure you want to cancel this booking?');">
+                                        Cancel
+                                    </a>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-secondary mt-auto" disabled>
+                                        Cannot cancel (less than 24 hrs)
+                                    </button>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    private List<Booking> bookings = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var userId = HttpContextAccessor.HttpContext?.User?.Identity?.Name ?? "Anonymous";
+
+        if (userId == "Anonymous")
+        {
+            NavigationManager.NavigateTo("/login", true);
+            return;
+        }
+
+        using var context = DbFactory.CreateDbContext();
+        bookings = await context.Bookings
+            .Include(b => b.Event)
+            .Where(b => b.UserId == userId)
+            .ToListAsync();
+    }
+}
+
